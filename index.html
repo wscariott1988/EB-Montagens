@@ -33,7 +33,12 @@
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts carregado assíncrono (não bloqueia render) + display=optional (zero CLS) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=optional">
+    </noscript>
     
     <!-- Critical CSS Inline (acima da dobra) -->
     <style>
@@ -119,7 +124,7 @@
             
             <div class="hero-image-wrapper">
                 <picture>
-                    <source srcset="Public/Hero.webp" type="image/webp">
+                    <source srcset="Public/Hero-280.webp 280w, Public/Hero.webp 420w" sizes="(max-width: 768px) 280px, 420px" type="image/webp">
                     <img src="Public/Hero.webp" alt="Bruno Samuel - Montador de Móveis Profissional" class="hero-image" fetchpriority="high" width="420" height="525">
                 </picture>
             </div>
