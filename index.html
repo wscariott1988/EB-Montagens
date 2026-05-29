@@ -30,18 +30,14 @@
     <!-- Favicon Premium (Ícone de ferramenta vetorial ultra leve em SVG) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A0A0A%22/><path d=%22M30 70 L70 30 M60 20 L80 40 M25 75 L35 65%22 stroke=%22%23FFB800%22 stroke-width=%2212%22 stroke-linecap=%22round%22/></svg>">
     
-    <!-- Google Fonts Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Google Fonts carregado assíncrono (não bloqueia render) + display=optional (zero CLS) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=optional">
-    </noscript>
+    <!-- Fontes auto-hospedadas (Inter + Outfit variáveis) -->
+    <link rel="preload" href="Public/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="Public/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- Critical CSS Inline (acima da dobra) -->
     <style>
+        @font-face{font-family:'Inter';font-style:normal;font-weight:300 700;font-display:swap;src:url('Public/fonts/Inter.woff2') format('woff2')}
+        @font-face{font-family:'Outfit';font-style:normal;font-weight:400 800;font-display:swap;src:url('Public/fonts/Outfit.woff2') format('woff2')}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
         body{background-color:#050505;color:#fff;font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
