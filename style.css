@@ -770,8 +770,76 @@ body {
     color: rgba(255, 255, 255, 0.3);
 }
 
+
 /* ==========================================================================
-   MÍDIA QUERIES - RESPONSIVIDADE EXCELENTE
+   ÍCONES VETORIAIS LEVES & BOTÃO FLUTUANTE (DEDÃO ZONE)
+   ========================================================================== */
+
+/* Estilo dos novos ícones SVG nos diferenciais */
+.icon-svg {
+    width: 38px;
+    height: 38px;
+    color: var(--color-yellow-primary);
+    stroke: var(--color-yellow-primary);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    display: inline-block;
+    transition: var(--transition-fast);
+}
+
+.diferencial-card:hover .icon-svg {
+    transform: scale(1.1);
+    color: #FFFFFF;
+    stroke: #FFFFFF;
+}
+
+/* Botão Flutuante do WhatsApp Pulsante na Dedão Zone */
+.btn-whatsapp-flutuante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366; /* Verde do WhatsApp */
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    animation: pulseWhatsapp 2s infinite;
+}
+
+.btn-whatsapp-flutuante:hover {
+    transform: scale(1.1);
+    background-color: #20BA56;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.btn-whatsapp-flutuante svg {
+    width: 32px;
+    height: 32px;
+}
+
+@keyframes pulseWhatsapp {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* ==========================================================================
+   MÍDIA QUERIES - RESPONSIVIDADE & MOBILE-FIRST
    ========================================================================== */
 
 @media (max-width: 1024px) {
@@ -786,115 +854,174 @@ body {
 
 @media (max-width: 768px) {
     .main-header {
-        padding: 12px 0;
+        padding: 10px 0;
     }
     
     .logo-text {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     
     .btn-header {
-        padding: 8px 16px;
+        padding: 8px 14px;
         font-size: 0.8rem;
     }
     
-    /* Hero Responsivo Móvel */
+    /* Hero Responsivo Mobile-First (Foto abaixo da Headline) */
     .hero-section {
-        padding-top: 120px;
-        padding-bottom: 60px;
+        padding-top: 110px;
+        padding-bottom: 50px;
     }
     
     .hero-container {
+        display: grid;
         grid-template-columns: 1fr;
+        grid-template-areas: 
+            "badge"
+            "title"
+            "image"
+            "subtitle"
+            "ctas";
         text-align: center;
-        gap: 40px;
+        gap: 25px;
     }
     
     .badge-google {
-        margin-bottom: 18px;
+        grid-area: badge;
+        margin-bottom: 0;
+        justify-self: center;
     }
     
     .hero-title {
-        font-size: 2.2rem;
-        margin-bottom: 15px;
+        grid-area: title;
+        font-size: 2.1rem;
+        margin-bottom: 0;
+        letter-spacing: -0.5px;
+    }
+    
+    .hero-image-wrapper {
+        grid-area: image;
+        order: unset;
+        display: flex;
+        justify-content: center;
+        margin: 5px 0;
+    }
+    
+    .hero-image {
+        max-width: 280px;
+        aspect-ratio: 4 / 5;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
     }
     
     .hero-subtitle {
+        grid-area: subtitle;
         font-size: 1rem;
-        margin-bottom: 25px;
+        margin-bottom: 0;
         margin-right: auto;
         margin-left: auto;
+        max-width: 100%;
+        line-height: 1.5;
     }
     
     .hero-ctas {
+        grid-area: ctas;
         align-items: center;
         width: 100%;
+        margin-bottom: 0;
+        gap: 15px;
     }
     
     .btn-cta {
         width: 100%;
         max-width: 320px;
-    }
-    
-    .hero-benefits {
-        justify-content: center;
-    }
-    
-    .hero-image-wrapper {
-        order: -1; /* Foto aparece acima do texto no celular para conexão visual rápida */
-    }
-    
-    .hero-image {
-        max-width: 290px;
-        aspect-ratio: 4 / 5;
+        padding: 14px 28px;
+        font-size: 0.95rem;
     }
     
     /* Diferenciais Responsivos */
     .diferenciais-section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
     
     .diferenciais-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 16px;
     }
     
     .diferencial-card {
-        padding: 30px 20px;
+        padding: 24px 20px;
+        text-align: center;
+    }
+    
+    .dif-icon-wrapper {
+        margin-bottom: 12px;
+    }
+    
+    .diferencial-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+    }
+    
+    .diferencial-card p {
+        font-size: 0.9rem;
     }
     
     /* Serviços Responsivos */
     .services-section {
-        padding: 80px 0;
+        padding: 70px 0;
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .section-subtitle {
         font-size: 0.95rem;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        padding: 0 10px;
     }
     
     .services-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 20px;
     }
     
     .service-content {
-        padding: 25px;
+        padding: 24px 20px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.35rem;
+        margin-bottom: 10px;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .service-list {
+        padding-top: 15px;
+        gap: 10px;
+    }
+    
+    .service-list li {
+        font-size: 0.85rem;
+    }
+    
+    .services-action {
+        margin-top: 30px;
     }
     
     /* Avaliações Responsivas */
     .depoimentos-section {
-        padding: 80px 0;
+        padding: 70px 0;
     }
     
     .g-logo-wrapper {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+        gap: 8px;
     }
     
     .g-logo-wrapper h2 {
@@ -903,17 +1030,22 @@ body {
     
     .depoimentos-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 20px;
     }
     
     .depoimento-card {
-        padding: 25px 20px;
+        padding: 24px 20px;
+    }
+    
+    .depoimento-text {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
     }
     
     /* Footer Responsivo */
     .footer-container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
         text-align: center;
     }
     
@@ -932,3 +1064,19 @@ body {
         transform: translateX(-50%);
     }
 }
+
+/* Evitar embaralhamento da logo no cabeçalho em celulares pequenos */
+@media (max-width: 480px) {
+    .btn-header {
+        display: none; /* Oculta o botão do header, pois o botão flutuante e os CTAs principais já cobrem a conversão */
+    }
+    
+    .header-container {
+        justify-content: center; /* Centraliza a logo no mobile para um visual premium */
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+}
+
