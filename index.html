@@ -13,7 +13,7 @@
     <meta property="og:title" content="BS Montagem de Móveis | Montador de Móveis em Porto Alegre e Região">
     <meta property="og:description" content="Montagem profissional de móveis residenciais, comerciais e planejados. Ferramentas modernas, serviço garantido e orçamento rápido via WhatsApp.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="Public/Hero.png">
+    <meta property="og:image" content="Public/Hero.webp">
     
     <!-- Favicon Premium (Ícone de ferramenta vetorial ultra leve em SVG) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A0A0A%22/><path d=%22M30 70 L70 30 M60 20 L80 40 M25 75 L35 65%22 stroke=%22%23FFB800%22 stroke-width=%2212%22 stroke-linecap=%22round%22/></svg>">
@@ -23,8 +23,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Estilo Principal -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Critical CSS Inline (acima da dobra) -->
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+        body{background-color:#050505;color:#fff;font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+        :root{--color-black-pure:#050505;--color-black-deep:#0D0D0D;--color-black-light:#161616;--color-yellow-primary:#FFB800;--color-yellow-secondary:#D48C00;--color-white:#FFF;--color-gray-light:#F3F4F6;--color-gray-text:#B3B3B3;--font-titles:'Outfit',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--glass-bg:rgba(22,22,22,0.7);--glass-border:rgba(255,184,0,0.15);--glass-border-hover:rgba(255,184,0,0.4);--transition-fast:all 0.2s cubic-bezier(0.4,0,0.2,1);--transition-smooth:all 0.4s cubic-bezier(0.4,0,0.2,1)}
+        .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+        .btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-titles);font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:.5px;text-decoration:none;padding:16px 32px;border-radius:8px;border:none;cursor:pointer;transition:var(--transition-smooth);box-shadow:0 4px 20px rgba(0,0,0,0.4)}
+        .btn-main-pulse{background:linear-gradient(135deg,var(--color-yellow-primary),var(--color-yellow-secondary));color:var(--color-black-pure)}
+        .btn-main-pulse:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(255,184,0,0.4)}
+        .icon-whatsapp{width:20px;height:20px}
+        .main-header{background-color:rgba(5,5,5,0.95);border-bottom:1px solid rgba(255,255,255,0.05);position:fixed;top:0;left:0;right:0;z-index:100;padding:15px 0;transition:var(--transition-fast)}
+        .header-container{display:flex;justify-content:space-between;align-items:center}
+        .logo{display:flex;align-items:center;gap:8px}
+        .logo-text{font-family:var(--font-titles);font-weight:800;font-size:1.5rem;color:var(--color-white);letter-spacing:-0.5px}
+        .logo-text span{color:var(--color-yellow-primary)}
+        .btn-header{padding:10px 20px;font-size:.85rem;border-radius:6px;background:transparent;color:var(--color-yellow-primary);border:1.5px solid var(--color-yellow-primary);box-shadow:none}
+        .btn-header:hover{background-color:var(--color-yellow-primary);color:var(--color-black-pure)}
+        .hero-section{position:relative;padding-top:150px;padding-bottom:80px;background:linear-gradient(180deg,var(--color-black-pure),var(--color-black-deep));overflow:hidden}
+        .hero-container{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center}
+        .hero-content{grid-column:1}
+        .badge-google{display:inline-flex;align-items:center;gap:8px;background-color:rgba(255,184,0,0.08);border:1px solid rgba(255,184,0,0.2);padding:6px 12px;border-radius:50px;margin-bottom:24px}
+        .star-rating{color:var(--color-yellow-primary);font-weight:700;letter-spacing:2px}
+        .badge-text{font-size:.85rem;font-weight:600;color:var(--color-gray-light)}
+        .hero-title{font-family:var(--font-titles);font-size:3.2rem;font-weight:800;line-height:1.15;color:var(--color-white);margin-bottom:20px;letter-spacing:-1px}
+        .hero-subtitle{font-size:1.15rem;color:var(--color-gray-text);margin-bottom:35px;max-width:580px}
+        .hero-ctas{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:35px}
+        .cta-help-text{font-size:.85rem;color:var(--color-gray-text);padding-left:5px}
+        .hero-image-wrapper{grid-column:2;display:flex;justify-content:center;align-items:center}
+        .hero-image{width:100%;max-width:420px;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:1px solid rgba(255,184,0,0.15);box-shadow:0 20px 40px rgba(0,0,0,0.8)}
+    </style>
+    
+    <!-- Full CSS carregado assíncrono (não bloqueia renderização) -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
 </head>
 <body>
 
@@ -73,7 +106,10 @@
             </div>
             
             <div class="hero-image-wrapper">
-                <img src="Public/Hero.png" alt="Bruno Samuel - Montador de Móveis Profissional" class="hero-image" fetchpriority="high">
+                <picture>
+                    <source srcset="Public/Hero.webp" type="image/webp">
+                    <img src="Public/Hero.webp" alt="Bruno Samuel - Montador de Móveis Profissional" class="hero-image" fetchpriority="high" width="420" height="525">
+                </picture>
             </div>
         </div>
     </section>

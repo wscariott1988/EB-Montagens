@@ -94,7 +94,7 @@ body {
     position: relative;
     z-index: 1;
     overflow: hidden;
-    animation: btnPulse 2s infinite;
+    /* animation removida por performance */
 }
 
 .btn-main-pulse:hover {
@@ -107,19 +107,6 @@ body {
     transform: translateY(0);
 }
 
-/* Animação do Brilho e Pulso do Botão */
-@keyframes btnPulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 184, 0, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 12px rgba(255, 184, 0, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 184, 0, 0);
-    }
-}
-
 .icon-whatsapp {
     width: 20px;
     height: 20px;
@@ -130,8 +117,8 @@ body {
    ========================================================================== */
 
 .main-header {
-    background-color: rgba(5, 5, 5, 0.85);
-    backdrop-filter: blur(8px);
+    background-color: rgba(5, 5, 5, 0.95);
+    /* backdrop-filter removido por performance */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     position: fixed;
     top: 0;
@@ -436,8 +423,7 @@ body {
 /* Estilo Glassmorphism Premium nos Cards */
 .service-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filter removido por performance */
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     overflow: hidden;
@@ -812,7 +798,7 @@ body {
     z-index: 999;
     text-decoration: none;
     transition: var(--transition-smooth);
-    animation: pulseWhatsapp 2s infinite;
+    /* animation removida por performance */
 }
 
 .btn-whatsapp-flutuante:hover {
@@ -824,18 +810,6 @@ body {
 .btn-whatsapp-flutuante svg {
     width: 32px;
     height: 32px;
-}
-
-@keyframes pulseWhatsapp {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
 }
 
 /* ==========================================================================
